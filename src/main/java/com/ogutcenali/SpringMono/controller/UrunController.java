@@ -20,6 +20,13 @@ public class UrunController {
 
     private final UrunService urunService;
 
+    @GetMapping(SAVE)
+    public ResponseEntity<Urun> save(String ad,Double fiyat){
+        Urun urun =  Urun.builder().ad(ad).fiyat(fiyat).build();
+        urunService.save(urun);
+        return ResponseEntity.ok(urun);
+    }
+
 
     @GetMapping(FINDALL)
     public ResponseEntity<List<Urun>> findAll()

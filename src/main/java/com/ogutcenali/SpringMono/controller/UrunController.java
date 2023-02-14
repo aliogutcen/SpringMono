@@ -27,7 +27,6 @@ public class UrunController {
         return ResponseEntity.ok(urun);
     }
 
-
     @GetMapping(FINDALL)
     public ResponseEntity<List<Urun>> findAll()
     {

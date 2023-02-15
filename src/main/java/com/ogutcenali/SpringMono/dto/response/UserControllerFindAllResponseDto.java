@@ -12,7 +12,7 @@ public class UserControllerFindAllResponseDto {
 
     String avatar;
 
-
+    Long id;
 
 
 }

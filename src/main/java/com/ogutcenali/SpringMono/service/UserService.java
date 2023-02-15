@@ -2,6 +2,7 @@ package com.ogutcenali.SpringMono.service;
 
 import com.ogutcenali.SpringMono.dto.request.RegisterRequestDto;
 import com.ogutcenali.SpringMono.dto.response.UserControllerFindAllResponseDto;
+import com.ogutcenali.SpringMono.mapper.IUserMapper;
 import com.ogutcenali.SpringMono.repository.IUserRepository;
 import com.ogutcenali.SpringMono.repository.entity.User;
 import com.ogutcenali.SpringMono.utility.ServiceManager;
@@ -22,24 +23,26 @@ public class UserService extends ServiceManager<User, Long> {
 
 
     public Boolean register(RegisterRequestDto dto) {
-        User user = User.builder().password(dto.getPassword()).username(dto.getUsername()).email(dto.getEmail()).build();
+        User user = User.builder()
+                .password(dto.getPassword())
+                .username(dto.getUsername())
+                .email(dto.getEmail())
+                .build();
         save(user);
         return true;
     }
 
+    public Boolean registerMapper(RegisterRequestDto dto) {
+        save(IUserMapper.INSTANCE.toUser(dto));
+        return true;
+    }
 
     public List<UserControllerFindAllResponseDto> findAllResponseDtoList() {
         List<UserControllerFindAllResponseDto> result = new ArrayList<>();
+
         findAll().forEach(x -> {
-
-            result.add(UserControllerFindAllResponseDto.builder()
-                    .avatar(x.getAvatar())
-                    .username(x.getUsername())
-                    .build());
-
+            result.add(IUserMapper.INSTANCE.userControllerFindAllResponseDtoFromUser(x));
         });
-
-
         return result;
     }
 }

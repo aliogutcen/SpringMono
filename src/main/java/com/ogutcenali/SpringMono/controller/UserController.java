@@ -34,8 +34,9 @@ public class UserController {
     }
 
 
+    @GetMapping(FINDALL)
     public ResponseEntity<List<UserControllerFindAllResponseDto>> findAll(){
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok(userService.findAllResponseDtoList());
     }
 
 

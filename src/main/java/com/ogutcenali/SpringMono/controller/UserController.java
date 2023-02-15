@@ -3,7 +3,6 @@ package com.ogutcenali.SpringMono.controller;
 import com.ogutcenali.SpringMono.dto.request.LoginRequestDto;
 import com.ogutcenali.SpringMono.dto.request.RegisterRequestDto;
 import com.ogutcenali.SpringMono.dto.response.UserControllerFindAllResponseDto;
-import com.ogutcenali.SpringMono.repository.entity.User;
 import com.ogutcenali.SpringMono.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -24,11 +23,10 @@ public class UserController {
 
 
     @GetMapping(REGISTER)
-    public ResponseEntity<String> register(RegisterRequestDto dto){
-        userService.save(User.builder().email(dto.getEmail()).username(dto.getUsername()).password(dto.getPassword())
-                .build());
+    public ResponseEntity<Boolean> register(RegisterRequestDto dto){
+       userService.register(dto);
 
-        return ResponseEntity.ok("Ok");
+        return ResponseEntity.ok(userService.register(dto));
     }
 
     public ResponseEntity<Boolean> doLogin (LoginRequestDto dto){

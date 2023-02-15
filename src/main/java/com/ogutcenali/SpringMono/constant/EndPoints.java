@@ -5,13 +5,14 @@ public class EndPoints {
     public static final String VERSION="/v1";
 
     public static final String DEV = "/dev";
-
     public static final String TEST= "test";
     public static final String API = "api";
 
     public static final String MUSTERİ= VERSION+DEV+"/musteri";
     public static final String URUN=VERSION+DEV+ "/urun";
     public static final String SATIS= VERSION+DEV+"/satis";
+    public static final String USER= VERSION+DEV+"/user";
+
 
 
     public static final String SAVE= "/save";

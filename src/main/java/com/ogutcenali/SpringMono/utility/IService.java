@@ -2,8 +2,6 @@ package com.ogutcenali.SpringMono.utility;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.OptionalInt;
-
 public interface IService<T, ID> {
 
     T save(T t);

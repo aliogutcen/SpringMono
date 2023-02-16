@@ -7,7 +7,6 @@ import com.ogutcenali.SpringMono.repository.IUserRepository;
 import com.ogutcenali.SpringMono.repository.entity.User;
 import com.ogutcenali.SpringMono.utility.ServiceManager;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +19,6 @@ public class UserService extends ServiceManager<User, Long> {
         super(userRepository);
         this.userRepository = userRepository;
     }
-
 
     public Boolean register(RegisterRequestDto dto) {
         User user = User.builder()

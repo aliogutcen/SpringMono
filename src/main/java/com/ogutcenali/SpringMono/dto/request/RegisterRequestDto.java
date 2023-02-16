@@ -16,4 +16,6 @@ public class RegisterRequestDto {
     String password;
 
     String email;
+
+    String repassword;
 }

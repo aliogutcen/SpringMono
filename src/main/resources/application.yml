@@ -2,10 +2,6 @@
 #Dikkat burada değerler anahtarlardan ayrı yazılır.
 # port : yazdıktan sonra bir bboşluk atıp değeri yazmamız gerekiyor yani => port: 80
 
-
-server:
-  port: 80
-
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
@@ -19,6 +15,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
-
+server:
+  port: 80
 
 

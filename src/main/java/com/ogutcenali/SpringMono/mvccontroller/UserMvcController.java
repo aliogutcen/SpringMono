@@ -68,18 +68,15 @@ public class UserMvcController {
             return model;
 
         } else {
-            return new ModelAndView("index");
+            return new ModelAndView("urun");
         }
     }
-
     @GetMapping(INDEX)
-   public ModelAndView index() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index");
-    return modelAndView;
+    public ModelAndView index(){
+        ModelAndView model = new ModelAndView();
+        model.setViewName("index");
+        return model;
     }
-
-
 }
 
 

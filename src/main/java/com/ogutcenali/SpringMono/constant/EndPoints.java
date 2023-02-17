@@ -14,7 +14,7 @@ public class EndPoints {
     public static final String SATIS= VERSION+DEV+"/satis";
     public static final String USER= VERSION+DEV+"/user";
     public static final String USER_MVC= MVC+"/user";
-
+    public static final String URUN_MVC= MVC+"/urun";
 
     public static final String SAVE= "/save";
     public static final String FINDALL= "/findall";

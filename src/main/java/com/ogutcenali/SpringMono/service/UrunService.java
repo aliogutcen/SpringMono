@@ -1,5 +1,7 @@
 package com.ogutcenali.SpringMono.service;
 
+import com.ogutcenali.SpringMono.dto.request.UrunSaveRequestDto;
+import com.ogutcenali.SpringMono.mapper.IUrunMapper;
 import com.ogutcenali.SpringMono.repository.IUrunRepository;
 import com.ogutcenali.SpringMono.repository.entity.Urun;
 import com.ogutcenali.SpringMono.utility.ServiceManager;
@@ -11,7 +13,11 @@ public class UrunService  extends ServiceManager<Urun,Long> {
 
 public UrunService(IUrunRepository urunRepository){
     super(urunRepository);
+}
 
+
+public void save(UrunSaveRequestDto dto){
+    save(IUrunMapper.INSTANCE.toUrun(dto));
 }
 
 }

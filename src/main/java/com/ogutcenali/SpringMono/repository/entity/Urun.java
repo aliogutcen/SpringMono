@@ -1,6 +1,9 @@
 package com.ogutcenali.SpringMono.repository.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
@@ -23,4 +26,9 @@ public class Urun extends BaseEntity {
     Double fiyat;
 
     String barkod;
+
+    Integer kdv;
+
+    String resim;
+
 }

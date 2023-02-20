@@ -49,7 +49,7 @@ public class UrunMvcController {
     @PostMapping(UPDATE)
     public ModelAndView update(UrunUpdateRequestDto dto){
         urunService.update(dto);
-        return new ModelAndView("/");
+        return new ModelAndView("redirect:index");
     }
 
 }

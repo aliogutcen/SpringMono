@@ -128,15 +128,59 @@
         </form>
     </div>
 
-<div hidden="hidden">
+
     <!-- MODAL Düzenleme Alanı    -->
-    <div class="modal fade" id="modelDuzenle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal modal-xl fade" id="modelDuzenle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header"><h1 class="modal-title fs-5" id="exampleModalLabel">Ürün Düzenleme</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body"> ...</div>
+                <div class="modal-body">
+
+                    <form action="save" method="post">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="mb3">
+                                    <label for="id" class="form-label">Id</label>
+                                    <input type="text" class="form-control" id="guncelleid" name="id">
+                                </div>
+                                <div class="mb3">
+                                    <label for="ad" class="form-label">Ürün Adı</label>
+                                    <input type="text" class="form-control" id="guncellead" name="ad" required>
+                                </div>
+                                <div class="mb3">
+                                    <label for="fiyat" class="form-label">Ürün Fiyatı</label>
+                                    <input type="text" class="form-control" id="guncellefiyat" name="fiyat" required>
+                                </div>
+                                <div class="mb3">
+                                    <label for="barkod" class="form-label">Barkod</label>
+                                    <input type="text" class="form-control" id="guncellebarkod" name="barkod" required>
+                                </div>
+                                <div class="mb3">
+                                    <label for="id" class="form-label">KDV</label>
+                                    <select name="kdv" id="guncellekdv" class="form-select" required>
+                                        <option>SEÇİNİZ</option>
+                                        <option value="1">%1</option>
+                                        <option value="3">%3</option>
+                                        <option value="5">%5</option>
+                                        <option value="8">%8</option>
+                                        <option value="18">%18</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <img class="mt-5" src="/img/blank.jpg" alt="Ürün resmi burada olacak" width="300"
+                                     height="300">
+                            </div>
+                            <div class="col-md-12 d-grid mt-2">
+                                <button type="submit" class="btn btn-primary">K A Y D E T</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
                     <button type="button" class="btn btn-primary">Güncelle</button>
@@ -144,7 +188,7 @@
             </div>
         </div>
     </div><!--    MODAL SONU-->
-</div>
+
 
 </div>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

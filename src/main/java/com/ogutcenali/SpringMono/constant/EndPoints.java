@@ -21,6 +21,7 @@ public class EndPoints {
     public static final String DELETE= "/delete";
     public static final String FINDBYID= "/findbyid";
 
+    public static final String UPDATE= "/update";
     public static final String SAVEALL= "/saveall";
 
     public static final String REGISTER= "/register";

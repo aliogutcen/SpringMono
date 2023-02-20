@@ -104,7 +104,8 @@
                             <img src="/img/bos.PNG" alt="Ürün resmi" width="50px" height="50px">
                         </td>
                         <td>
-                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modelDuzenle">
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modelDuzenle"
+                               th:attr="onclick=|duzenle(${urun.id},'${urun.ad}',${urun.fiyat},'${urun.barkod}',${urun.kdv})|">
                                 Düzenle
                             </a>
                             <a href="#" class="btn btn-danger" th:attr="onclick=|sil('${urun.id}')|">
@@ -130,7 +131,7 @@
 
 
     <!-- MODAL Düzenleme Alanı    -->
-    <div class="modal modal-xl fade" id="modelDuzenle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal modal-xl fade" id="modelDuzenle" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header"><h1 class="modal-title fs-5" id="exampleModalLabel">Ürün Düzenleme</h1>
@@ -143,23 +144,23 @@
                             <div class="col-md-8">
                                 <div class="mb3">
                                     <label for="id" class="form-label">Id</label>
-                                    <input type="text" class="form-control" id="guncelleid" name="id">
+                                    <input type="text" class="form-control" id="g_id" name="id" disabled>
                                 </div>
                                 <div class="mb3">
                                     <label for="ad" class="form-label">Ürün Adı</label>
-                                    <input type="text" class="form-control" id="guncellead" name="ad" required>
+                                    <input type="text" class="form-control" id="g_ad" name="ad" required>
                                 </div>
                                 <div class="mb3">
                                     <label for="fiyat" class="form-label">Ürün Fiyatı</label>
-                                    <input type="text" class="form-control" id="guncellefiyat" name="fiyat" required>
+                                    <input type="text" class="form-control" id="g_fiyat" name="fiyat" required>
                                 </div>
                                 <div class="mb3">
                                     <label for="barkod" class="form-label">Barkod</label>
-                                    <input type="text" class="form-control" id="guncellebarkod" name="barkod" required>
+                                    <input type="text" class="form-control" id="g_barkod" name="barkod" required>
                                 </div>
                                 <div class="mb3">
                                     <label for="id" class="form-label">KDV</label>
-                                    <select name="kdv" id="guncellekdv" class="form-select" required>
+                                    <select name="kdv" id="g_kdv" class="form-select" required>
                                         <option>SEÇİNİZ</option>
                                         <option value="1">%1</option>
                                         <option value="3">%3</option>
@@ -174,7 +175,7 @@
                                      height="300">
                             </div>
                             <div class="col-md-12 d-grid mt-2">
-                                <button type="submit" class="btn btn-primary">K A Y D E T</button>
+                                <button type="submit" class="btn btn-primary">G U N C E L L E</button>
                             </div>
                         </div>
 
@@ -183,7 +184,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
-                    <button type="button" class="btn btn-primary">Güncelle</button>
+
                 </div>
             </div>
         </div>
@@ -218,6 +219,23 @@
             }
         })
     }
+
+    function duzenle(id,ad,fiyat,barkod,kdv){
+        const txtg_id = document.getElementById('g_id');
+        const txtg_ad = document.getElementById('g_ad');
+        const txtg_fiyat = document.getElementById('g_fiyat');
+        const txtg_barkod = document.getElementById('g_barkod');
+        const txtg_kdv = document.getElementById('g_kd');
+
+        txtg_id.value=id;
+        txtg_ad.value=ad;
+        txtg_fiyat.value=fiyat;
+        txtg_barkod.value=barkod;
+        txtg_kdv.value=kdv;
+
+    }
+
+
 
 </script>
 </body>

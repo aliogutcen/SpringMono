@@ -1,6 +1,7 @@
 package com.ogutcenali.SpringMono.service;
 
 import com.ogutcenali.SpringMono.dto.request.UrunSaveRequestDto;
+import com.ogutcenali.SpringMono.dto.request.UrunUpdateRequestDto;
 import com.ogutcenali.SpringMono.mapper.IUrunMapper;
 import com.ogutcenali.SpringMono.repository.IUrunRepository;
 import com.ogutcenali.SpringMono.repository.entity.Urun;
@@ -18,6 +19,11 @@ public UrunService(IUrunRepository urunRepository){
 
 public void save(UrunSaveRequestDto dto){
     save(IUrunMapper.INSTANCE.toUrun(dto));
+}
+
+
+public void update(UrunUpdateRequestDto dto){
+    update(IUrunMapper.INSTANCE.toUrun(dto));
 }
 
 }

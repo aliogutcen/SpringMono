@@ -1,6 +1,7 @@
 package com.ogutcenali.SpringMono.dto.request;
 
 import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @Data
 @Builder
@@ -18,5 +19,7 @@ public class UrunSaveRequestDto {
     String kdv;
 
     String barkod;
+
+    MultipartFile profileimg;
 
 }

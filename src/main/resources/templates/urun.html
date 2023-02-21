@@ -35,7 +35,7 @@
         <div class="col-md-8">
             <!-- Input Alanı               -->
             <div class="row">
-                <form action="save" method="post">
+                <form action="save" method="post" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-8">
                             <div class="mb3">
@@ -69,6 +69,9 @@
                         <div class="col-md-4 text-center">
                             <img class="mt-5" src="/img/blank.jpg" alt="Ürün resmi burada olacak" width="300"
                                  height="300">
+
+
+                            <input type="file" name="profileimg" id="profileimg">
                         </div>
                         <div class="col-md-12 d-grid mt-2">
                             <button type="submit" class="btn btn-primary">K A Y D E T</button>

@@ -28,6 +28,14 @@ public class MusteriController {
     @Autowired
     MusteriService musteriService;
 
+    @GetMapping("/error")
+    public ResponseEntity<String> testError(){
+        int i = 0 ;
+        if(i==0)
+        throw  new IllegalArgumentException("Çok Fena hata oluştu.");
+        return ResponseEntity.ok("hata sayfasi.");
+    }
+
 
     /*
      https://localhost/musteri/save = > @GetMapping("/save")

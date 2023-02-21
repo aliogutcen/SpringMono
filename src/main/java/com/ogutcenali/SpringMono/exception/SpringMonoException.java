@@ -1,5 +1,8 @@
 package com.ogutcenali.SpringMono.exception;
 
+import lombok.Getter;
+
+@Getter
 public class SpringMonoException  extends  RuntimeException{
 
     private final ErrorType errorType;
